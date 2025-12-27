@@ -1,0 +1,43 @@
+# 手动推送命令（如果脚本无法运行）
+
+## 前提条件
+1. 确保已安装 Git
+2. 确保已在 GitHub 创建仓库：https://github.com/wittydragon22/昂宿
+
+## 执行以下命令：
+
+### 1. 初始化 Git（如果还没初始化）
+git init
+git add .
+git commit -m "Initial commit: 昂宿星团网站"
+
+### 2. 添加远程仓库（使用 token）
+git remote add origin https://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@github.com/wittydragon22/昂宿.git
+
+### 3. 推送代码
+git branch -M main
+git push -u origin main
+
+---
+
+## 如果遇到问题：
+
+### 问题：remote origin already exists
+解决：
+git remote remove origin
+# 然后重新执行步骤 2 和 3
+
+### 问题：推送被拒绝（仓库已有内容）
+解决：
+git pull origin main --allow-unrelated-histories
+git push -u origin main
+
+### 问题：仓库不存在
+解决：
+1. 访问 https://github.com/new
+2. 仓库名输入：昂宿
+3. 选择 Public 或 Private
+4. 不要勾选 "Initialize with README"
+5. 点击 "Create repository"
+6. 然后重新执行推送命令
+
