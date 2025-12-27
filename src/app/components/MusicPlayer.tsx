@@ -77,9 +77,8 @@ export function MusicPlayer() {
         preload="auto"
         crossOrigin="anonymous"
       >
-        <source src="/background-music.mp3" type="audio/mpeg" />
-        {/* 备用源，如果第一个失败 */}
-        <source src="./background-music.mp3" type="audio/mpeg" />
+        {/* 添加版本号强制刷新缓存 */}
+        <source src="/background-music.mp3?v=2" type="audio/mpeg" />
       </audio>
 
       {/* 音乐控制按钮 */}
