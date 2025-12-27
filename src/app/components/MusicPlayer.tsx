@@ -46,6 +46,28 @@ export function MusicPlayer() {
     }
   };
 
+  // 检查音频加载错误
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (audio) {
+      const handleError = (e: Event) => {
+        console.error('音频加载失败:', e);
+        console.error('尝试加载的文件:', audio.src);
+      };
+      const handleCanPlay = () => {
+        console.log('音频加载成功:', audio.src);
+      };
+      
+      audio.addEventListener('error', handleError);
+      audio.addEventListener('canplay', handleCanPlay);
+      
+      return () => {
+        audio.removeEventListener('error', handleError);
+        audio.removeEventListener('canplay', handleCanPlay);
+      };
+    }
+  }, []);
+
   return (
     <>
       {/* 背景音乐 - 使用本地音乐文件 */}
@@ -53,8 +75,11 @@ export function MusicPlayer() {
         ref={audioRef}
         loop
         preload="auto"
+        crossOrigin="anonymous"
       >
         <source src="/background-music.mp3" type="audio/mpeg" />
+        {/* 备用源，如果第一个失败 */}
+        <source src="./background-music.mp3" type="audio/mpeg" />
       </audio>
 
       {/* 音乐控制按钮 */}
