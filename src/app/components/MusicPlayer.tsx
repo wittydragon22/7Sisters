@@ -48,15 +48,13 @@ export function MusicPlayer() {
 
   return (
     <>
-      {/* 背景音乐 - 使用免费的圣诞音乐URL */}
+      {/* 背景音乐 - 使用本地音乐文件 */}
       <audio
         ref={audioRef}
         loop
         preload="auto"
       >
-        {/* 你需要替换这个URL为你自己的音乐文件 */}
-        {/* 可以上传MP3文件到public文件夹，然后使用 /music.mp3 */}
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+        <source src="/background-music.mp3" type="audio/mpeg" />
       </audio>
 
       {/* 音乐控制按钮 */}
