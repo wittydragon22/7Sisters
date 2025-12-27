@@ -50,8 +50,8 @@ git init
 git add .
 git commit -m "Initial commit: 昂宿星团网站"
 
-# 2. 添加远程仓库（使用你的 token）
-git remote add origin https://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@github.com/wittydragon22/昂宿.git
+# 2. 添加远程仓库（使用你的 token，替换 YOUR_TOKEN）
+git remote add origin https://YOUR_TOKEN@github.com/wittydragon22/7Sisters.git
 
 # 3. 推送代码
 git branch -M main

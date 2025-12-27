@@ -64,8 +64,8 @@ echo [4/5] 配置远程仓库...
 REM 检查远程仓库是否已存在
 git remote get-url origin >nul 2>&1
 if errorlevel 1 (
-    REM 使用 token 在 URL 中
-    set "REPO_URL=https://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@github.com/wittydragon22/昂宿.git"
+    REM 使用 token 在 URL 中 - 请替换 YOUR_TOKEN 为你的实际 token
+    set "REPO_URL=https://YOUR_TOKEN@github.com/wittydragon22/7Sisters.git"
     git remote add origin "%REPO_URL%"
     if errorlevel 1 (
         echo [✗] 添加远程仓库失败
@@ -74,8 +74,8 @@ if errorlevel 1 (
     )
     echo [✓] 已添加远程仓库
 ) else (
-    REM 更新远程仓库 URL 包含 token
-    set "REPO_URL=https://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@github.com/wittydragon22/昂宿.git"
+    REM 更新远程仓库 URL 包含 token - 请替换 YOUR_TOKEN 为你的实际 token
+    set "REPO_URL=https://YOUR_TOKEN@github.com/wittydragon22/7Sisters.git"
     git remote set-url origin "%REPO_URL%"
     echo [✓] 已更新远程仓库地址
 )
